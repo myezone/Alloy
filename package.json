@@ -1,0 +1,13 @@
+{
+  "name": "rccu-account-opening-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Russ Community Credit Union (Demo): digital account opening on Alloy's Journeys API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "mock": "MOCK_MODE=true node server.js",
+    "test": "node test.js"
+  },
+  "engines": { "node": ">=18" }
+}

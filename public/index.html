@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open an account | Russ Community Credit Union (Demo)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to the application</a>
+
+  <header class="bar">
+    <div class="bar-in">
+      <a class="brand" href="/" aria-label="Russ Community Credit Union demo, start over">
+        <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="16" cy="16" r="8.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="16" cy="16" r="3.5" fill="#FF6170"/>
+        </svg>
+        <span class="brand-name">Russ Community <span class="brand-sub">Credit Union</span></span>
+        <span class="pill pill-demo">Demo</span>
+      </a>
+      <nav class="bar-actions" aria-label="Demo controls">
+        <span class="mode" id="mode-badge" title="Where decisions come from">Connecting</span>
+        <button class="btn btn-outline btn-sm" id="status-link" type="button">Check status</button>
+        <button class="btn btn-fill btn-sm" id="xray-toggle" type="button" aria-expanded="false" aria-controls="xray">
+          <span class="sq" aria-hidden="true"></span>X-ray
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="shell" id="shell">
+    <main id="main" class="stage" tabindex="-1">
+      <div class="progress" id="progress" hidden>
+        <div class="progress-top">
+          <span class="eyebrow" id="progress-label"></span>
+          <span class="progress-time" id="progress-time"></span>
+        </div>
+        <ol class="steps" id="steps" aria-label="Application progress"></ol>
+      </div>
+      <section class="card" id="view" aria-live="polite"></section>
+      <p class="fine">
+        This is a demonstration for an interview exercise. Russ Community Credit Union is fictional and is not a real
+        financial institution. Use test data only. Nothing entered here opens an account.
+      </p>
+    </main>
+
+    <aside class="xray" id="xray" hidden aria-label="X-ray: what happens behind the screen">
+      <div class="xray-head">
+        <div>
+          <div class="eyebrow">X-ray</div>
+          <h2 class="xray-title">Behind the screen.</h2>
+        </div>
+        <button class="icon-btn" id="xray-close" type="button" aria-label="Close X-ray">
+          <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M1 1l10 10M11 1L1 11" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+        </button>
+      </div>
+      <div class="lanes" id="lanes" aria-hidden="true">
+        <div class="lane" data-lane="applicant"><span></span>Applicant</div>
+        <div class="lane" data-lane="app"><span></span>Digital app</div>
+        <div class="lane" data-lane="esb"><span></span>ESB</div>
+        <div class="lane" data-lane="alloy"><span></span>Alloy</div>
+        <div class="lane" data-lane="analyst"><span></span>Analyst</div>
+      </div>
+      <div class="xray-meta" id="xray-meta"></div>
+      <div class="xray-tools" id="xray-tools" hidden></div>
+      <ol class="hops" id="hops"></ol>
+      <p class="xray-empty" id="xray-empty">Submit an application and each hop appears here: the browser, the credit union's ESB, and Alloy's Journeys API.</p>
+    </aside>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
