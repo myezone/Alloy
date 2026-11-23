@@ -528,11 +528,28 @@
   }
 
   // ------------------------------------------------------------ events
+  function randomSsn() {
+    let ssn;
+    do {
+      ssn = String(Math.floor(Math.random() * 1e9)).padStart(9, '0');
+    } while (ssn.startsWith('000') || ssn.startsWith('666') || ssn.startsWith('9'));
+    return ssn;
+  }
+
+  function randomPhone() {
+    return '402555' + String(Math.floor(Math.random() * 10000)).padStart(4, '0');
+  }
+
+  function randomEmail(first, last) {
+    const tag = Math.random().toString(36).slice(2, 8);
+    return `${first}.${last}.${tag}@example.com`.toLowerCase();
+  }
+
   function fillPersona(key) {
     const p = PERSONAS.find((x) => x.key === key); if (!p) return;
     Object.assign(state.form, {
-      firstName: p.first, lastName: p.last, birthDate: '1988-04-12', ssn: '111223333',
-      email: `${p.first}.${p.last}@example.com`.toLowerCase(), phone: '4025550142',
+      firstName: p.first, lastName: p.last, birthDate: '1988-04-12', ssn: randomSsn(),
+      email: randomEmail(p.first, p.last), phone: randomPhone(),
       addressLine1: '100 Main Street', addressLine2: '', city: 'Anytown', state: 'FL', postalCode: p.postal, mailingSame: true,
     });
     state.errors = {};
